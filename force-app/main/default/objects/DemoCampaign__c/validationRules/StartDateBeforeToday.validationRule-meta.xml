@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StartDateBeforeToday</fullName>
+    <active>true</active>
+    <description>The campaign cannot start eralier than the day it is created</description>
+    <errorConditionFormula>StartDates__c  &lt; Today()&amp;&amp;  ISNEW()</errorConditionFormula>
+    <errorMessage>The campaign cannot start eralier than the day it is created</errorMessage>
+</ValidationRule>

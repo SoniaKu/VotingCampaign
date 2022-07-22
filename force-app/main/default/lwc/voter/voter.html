@@ -1,0 +1,51 @@
+<template>
+        
+       <lightning-card title="Campaign">
+        <p>Note: the list of questions will be empty if you've answered all of them. </p>
+<div class="slds-var-m-top_medium"></div>
+
+        <template if:true={showCampaigns}>
+               <lightning-combobox
+                       name="Campaign"
+                       label="Campaign"
+                       value={value}
+                       placeholder="Select a Campaign"
+                       options={campaignOptions}
+                       onchange={handleCampChange} >
+                </lightning-combobox>
+        </template>
+            
+        <template if:true={showQuestions}>
+                <lightning-combobox
+                        name="Question"
+                        label="Question"
+                        value={value}
+                        placeholder="Select a Question"
+                        options={questionOptions}
+                        onchange={handleQuestChange} >
+                </lightning-combobox>
+        </template>        
+
+        <template if:true={showAnswers}>
+                 <lightning-combobox
+                        name="Answer"
+                        label="Answer"
+                        value={value}
+                         placeholder="Select an Answer"
+                         options={answerOptions}
+                         onchange={handleAnswChange} >
+                 </lightning-combobox>
+        </template>
+
+
+        <template if:true={showNamePanel}>
+                <lightning-input label ="Your Vote Name" placeholder="Test Vote" value ={resultName} onchange={changeResultName}></lightning-input>
+        </template>   
+
+
+                 <lightning-button variant="brand-outline" label="Submit Your Answer" onclick={addResult} class="slds-var-m-top_medium"></lightning-button>
+               
+           </lightning-card>
+          
+  
+</template>
